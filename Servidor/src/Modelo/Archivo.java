@@ -18,12 +18,14 @@ public class Archivo
     private File archivo;
     private ArrayList<String> preguntas;
 
+    /**
+     * Constructor de la clase Archivo
+     */
     public Archivo()
     {
         this.preguntas = new ArrayList<String>();
         cargarArchivo();
         generarPreguntas();
-        //imprimirPregunta();
     }
 
     /**
@@ -31,9 +33,12 @@ public class Archivo
      */
     public void cargarArchivo()
     {
-        String location = "src"+File.separator+"Archivos"+File.separator+"Preguntas2.txt";
+        String location = "Servidor"+File.separator+"src"+File.separator+"Archivos"+File.separator+"Preguntas.txt";
         this.archivo = new File(location);
-        System.out.println("Archivo cargado correctamente");
+        if(this.archivo.exists())
+            System.out.println("Archivo cargado correctamente");
+        else
+            System.out.println("El archivo no pudo ser cargado");
     }
 
     /**
@@ -45,12 +50,12 @@ public class Archivo
     {
         try {
             Scanner buscador = new Scanner(this.archivo);
-            /*buscador.useDelimiter("}");
+            buscador.useDelimiter("}");
             while(buscador.hasNext())
             {
                 preguntas.add(buscador.next().trim());
-                buscador.nextLine();
-            }*/
+                //buscador.nextLine();
+            }
             buscador.close();
             System.out.println("Se establecieron las preguntas correctamente");                 
         } catch (FileNotFoundException e) {
@@ -58,9 +63,13 @@ public class Archivo
         }
     }
 
-    public void imprimirPregunta()
+    /**
+     * Método que retorna el tamaño del arreglo de preguntas
+     * @return tamaño del arreglo
+     */
+    public int cantidadPreguntas()
     {
-        System.out.println("La primera pregunta es:\n"+preguntas.get(0));
+        return this.preguntas.size();
     }
-    
+
 }
