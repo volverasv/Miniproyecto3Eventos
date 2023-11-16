@@ -9,5 +9,5 @@ public class Pregunta
 {
     private String enunciado;
     private String[] opciones;
-    private String rspuesta;
+    private String respuesta;
 }
