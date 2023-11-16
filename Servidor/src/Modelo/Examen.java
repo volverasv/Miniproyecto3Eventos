@@ -12,14 +12,14 @@ import java.util.ArrayList;
  */
 public class Examen 
 {
-    private ArrayList<String> preguntas;
+    private ArrayList<Pregunta> preguntas;
 
     /**
      * Constructor de la clase examen
      */
     public Examen()
     {
-        preguntas = new ArrayList<String>();
+        preguntas = new ArrayList<Pregunta>();
     }
 
     /**

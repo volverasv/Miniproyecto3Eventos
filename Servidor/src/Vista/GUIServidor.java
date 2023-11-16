@@ -1,4 +1,8 @@
 package Vista;
-public class GUIServidor {
-    
+
+import javax.swing.JFrame;
+
+public class GUIServidor extends JFrame 
+{
+        
 }

@@ -17,28 +17,38 @@ public class Archivo
 {
     private File archivo;
     private ArrayList<String> preguntas;
+    String nombreArchivo;
 
     /**
      * Constructor de la clase Archivo
      */
-    public Archivo()
+    public Archivo(String nombreArchivo)
     {
         this.preguntas = new ArrayList<String>();
-        cargarArchivo();
-        generarPreguntas();
+        this.nombreArchivo = nombreArchivo;
+        boolean existe =cargarArchivo();
+        if(existe)
+            generarPreguntas();
     }
 
     /**
      * Método que carga el archivo de texto que se utilizará
      */
-    public void cargarArchivo()
+    public boolean cargarArchivo()
     {
-        String location = "Servidor"+File.separator+"src"+File.separator+"Archivos"+File.separator+"Preguntas.txt";
+        String location = "Servidor"+File.separator+"src"+File.separator+"Archivos"+File.separator+nombreArchivo+".txt";
         this.archivo = new File(location);
         if(this.archivo.exists())
+        {
             System.out.println("Archivo cargado correctamente");
+            return true;
+        }            
         else
+        {
             System.out.println("El archivo no pudo ser cargado");
+            return false;
+        }
+            
     }
 
     /**
@@ -70,6 +80,11 @@ public class Archivo
     public int cantidadPreguntas()
     {
         return this.preguntas.size();
+    }
+
+    public String getPregunta(int pos)
+    {
+        return this.preguntas.get(pos);
     }
 
 }
