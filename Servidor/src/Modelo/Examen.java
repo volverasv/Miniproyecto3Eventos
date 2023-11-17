@@ -13,13 +13,26 @@ import java.util.ArrayList;
 public class Examen 
 {
     private ArrayList<Pregunta> preguntas;
+    private String nombre, informe;
+    private int[] tiempo; 
+    private int correctas, incorrectas;  
 
     /**
      * Constructor de la clase examen
      */
-    public Examen()
+    public Examen(String nombre, int horas, int minutos, int segundos)
     {
-        preguntas = new ArrayList<Pregunta>();
+        this.preguntas = new ArrayList<Pregunta>();
+        this.tiempo= new int[]{0,0,0};
+        this.nombre = nombre;
+        this.tiempo[0] = horas;
+        this.tiempo[1] = minutos;
+        this.tiempo[2] = segundos;
+    }
+
+    public void addPregunta(String texto)
+    {
+        this.preguntas.add(new Pregunta(texto));
     }
 
 }
