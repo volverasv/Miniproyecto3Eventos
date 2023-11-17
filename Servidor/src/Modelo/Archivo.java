@@ -82,6 +82,11 @@ public class Archivo
         return this.preguntas.size();
     }
 
+    /**
+     * Retorna la pregunta almacenada en el arreglo preguntas
+     * @param pos Posicion del arreglo a consultar
+     * @return Texto almacenado en la posición del arreglo
+     */
     public String getPregunta(int pos)
     {
         return this.preguntas.get(pos);

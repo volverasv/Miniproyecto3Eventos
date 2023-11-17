@@ -22,20 +22,4 @@ public class Examen
         preguntas = new ArrayList<Pregunta>();
     }
 
-    /**
-     * Añade al arreglo de preguntas un texto que recibe como parámetro
-     * @param text Pregunta a añadir
-     */
-    public void addPregunta(String text)
-    {
-        this.preguntas.add(text);
-    }
-
-    /**
-     * Guarda las preguntas del arreglo preguntas en un archivo de texto
-     */
-    public void exportarExamen()
-    {
-
-    }
 }
