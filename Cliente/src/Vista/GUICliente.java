@@ -41,7 +41,7 @@ public class GUICliente extends JFrame
     {
         //Crear componentes
         tpPestanas = new JTabbedPane();
-        pExamen = new JPanel(new GridLayout(2,0));
+        pExamen = new JPanel();
         pResultado = new JPanel();
         pPregunta = new JPanel();
 
@@ -50,7 +50,7 @@ public class GUICliente extends JFrame
         tpPestanas.addTab("Resultado",pResultado);
         add(tpPestanas);
 
-        pNorteExamen = new JPanel(new FlowLayout());
+        pNorteExamen = new JPanel();
         pTextArea = new JPanel(new GridLayout(0,2));
         pSurExamen = new JPanel(new GridLayout(2,2));
         pBotonesPreg = new JPanel(new GridLayout(3,1));
@@ -111,8 +111,8 @@ public class GUICliente extends JFrame
         pSurExamen.add(lTempoRestante);pSurExamen.add(lPregRespondidas);
         pSurExamen.add(tfTempoRestante);pSurExamen.add(tfPregRes);
 
-        pExamen.add(pNorteExamen);
-        pExamen.add(pSurExamen);
+        pExamen.add(pNorteExamen); pExamen.add(pSurExamen);
+        
         
         
         
