@@ -45,5 +45,6 @@ public class GUIServidor extends JFrame
         pestanas.addTab("Realizar examen",pHacer);
 
         add(pestanas);
+        //Hola
     }
 }
