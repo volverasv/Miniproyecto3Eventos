@@ -4,12 +4,13 @@ import javax.swing.*;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.FlowLayout;
 import java.awt.GridLayout;
 public class GUICliente extends JFrame 
 
 {
     JTabbedPane tpPestanas;
-    JPanel pExamen, pResultado, pPregunta, pNorteExamen,pBotonesPreg, pSurExamen;
+    JPanel pExamen, pResultado, pPregunta, pTextArea, pBotonesPreg, pSurExamen, pNorteExamen;
     JScrollPane jsExamen, jsResultado;
     JButton bResponder, bVerResultado, bCancelarPreg, bOK, B1,B2,B3;
     JToggleButton tbNumPregunta [];
@@ -40,7 +41,7 @@ public class GUICliente extends JFrame
     {
         //Crear componentes
         tpPestanas = new JTabbedPane();
-        pExamen = new JPanel();
+        pExamen = new JPanel(new GridLayout(2,0));
         pResultado = new JPanel();
         pPregunta = new JPanel();
 
@@ -49,7 +50,8 @@ public class GUICliente extends JFrame
         tpPestanas.addTab("Resultado",pResultado);
         add(tpPestanas);
 
-        pNorteExamen = new JPanel(new GridLayout(0,2));
+        pNorteExamen = new JPanel(new FlowLayout());
+        pTextArea = new JPanel(new GridLayout(0,2));
         pSurExamen = new JPanel(new GridLayout(2,2));
         pBotonesPreg = new JPanel(new GridLayout(3,1));
 
@@ -97,14 +99,22 @@ public class GUICliente extends JFrame
         pBotonesPreg.add(B2);
         pBotonesPreg.add(B3);
 
-        pNorteExamen.add(pBotonesPreg);pNorteExamen.add(jsExamen);
+    
+        pTextArea.add(jsExamen);
+        pTextArea.add(bResponder);
+       
+
+       pNorteExamen.add(pBotonesPreg);
+       pNorteExamen.add(pTextArea);
+       
+
         pSurExamen.add(lTempoRestante);pSurExamen.add(lPregRespondidas);
         pSurExamen.add(tfTempoRestante);pSurExamen.add(tfPregRes);
 
         pExamen.add(pNorteExamen, BorderLayout.NORTH);
-        pExamen.add(bResponder, BorderLayout.CENTER);
         pExamen.add(pSurExamen, BorderLayout.SOUTH);
-
+        
+        
         
      
         
