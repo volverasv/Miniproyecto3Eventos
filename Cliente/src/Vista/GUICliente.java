@@ -51,7 +51,7 @@ public class GUICliente extends JFrame
         add(tpPestanas);
 
         pNorteExamen = new JPanel();
-        pTextArea = new JPanel(new GridLayout(0,2));
+        pTextArea = new JPanel();
         pSurExamen = new JPanel(new GridLayout(2,2));
         pBotonesPreg = new JPanel(new GridLayout(3,1));
 
