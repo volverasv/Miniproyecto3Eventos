@@ -111,8 +111,8 @@ public class GUICliente extends JFrame
         pSurExamen.add(lTempoRestante);pSurExamen.add(lPregRespondidas);
         pSurExamen.add(tfTempoRestante);pSurExamen.add(tfPregRes);
 
-        pExamen.add(pNorteExamen, BorderLayout.NORTH);
-        pExamen.add(pSurExamen, BorderLayout.SOUTH);
+        pExamen.add(pNorteExamen);
+        pExamen.add(pSurExamen);
         
         
         
