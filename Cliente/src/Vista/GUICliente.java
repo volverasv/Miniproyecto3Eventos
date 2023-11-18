@@ -1,6 +1,7 @@
 package Vista;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -29,7 +30,7 @@ public class GUICliente extends JFrame
     public GUICliente()
     {
         setTitle("Cliente");
-        setSize(680, 560);
+        setSize(480, 560);
         crearGUI();
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -41,7 +42,7 @@ public class GUICliente extends JFrame
     {
         //Crear componentes
         tpPestanas = new JTabbedPane();
-        pExamen = new JPanel();
+        pExamen = new JPanel(new BorderLayout());
         pResultado = new JPanel();
         pPregunta = new JPanel();
 
@@ -50,8 +51,9 @@ public class GUICliente extends JFrame
         tpPestanas.addTab("Resultado",pResultado);
         add(tpPestanas);
 
+        pTextArea = new JPanel(new BorderLayout());
         pNorteExamen = new JPanel();
-        pTextArea = new JPanel();
+        
         pSurExamen = new JPanel(new GridLayout(2,2));
         pBotonesPreg = new JPanel(new GridLayout(3,1));
 
@@ -62,7 +64,7 @@ public class GUICliente extends JFrame
         B3 = new JButton("3");
         
 
-        areaExamen = new JTextArea(10, 25);
+        areaExamen = new JTextArea(10, 28);
         jsExamen = new JScrollPane(areaExamen);
         jsExamen.setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.GRAY, 5),""));
         
@@ -100,18 +102,18 @@ public class GUICliente extends JFrame
         pBotonesPreg.add(B3);
 
     
-        pTextArea.add(jsExamen);
-        pTextArea.add(bResponder);
-       
-
-       pNorteExamen.add(pBotonesPreg);
+        pTextArea.add(jsExamen, BorderLayout.NORTH); 
+        pTextArea.add(bResponder, BorderLayout.SOUTH);
+    
        pNorteExamen.add(pTextArea);
+       //pNorteExamen.add(bResponder, BorderLayout.SOUTH);
        
-
         pSurExamen.add(lTempoRestante);pSurExamen.add(lPregRespondidas);
         pSurExamen.add(tfTempoRestante);pSurExamen.add(tfPregRes);
 
-        pExamen.add(pNorteExamen); pExamen.add(pSurExamen);
+        pExamen.add(pBotonesPreg, BorderLayout.WEST);
+        pExamen.add(pNorteExamen, BorderLayout.CENTER);
+        pExamen.add(pSurExamen, BorderLayout.SOUTH);
         
         
         
